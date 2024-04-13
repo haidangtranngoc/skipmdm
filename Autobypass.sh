@@ -47,11 +47,11 @@ defineVolumePath() {
 	local volumeType=$2
 
 	if checkVolumeExistence "$defaultVolume"; then
-		echo "/Volumes/$defaultVolume"
+		echo "/System/Volumes/$defaultVolume"
 	else
 		local volumeName
 		volumeName="$(getVolumeName "$volumeType")"
-		echo "System/Volumes/$volumeName"
+		echo "/Volumes/$volumeName"
 	fi
 }
 
