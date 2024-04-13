@@ -3,7 +3,13 @@
 # Global constants
 readonly DEFAULT_SYSTEM_VOLUME="Macintosh HD"
 readonly DEFAULT_DATA_VOLUME="Data"
-
+SystemVolume=$DEFAULT_SYSTEM_VOLUME
+SystemDataVolume=$DEFAULT_DATA_VOLUME
+if [ -n "$1" ]
+then
+ SystemVolume=$1
+ SystemDataVolume="$1 - Data"
+fi
 # Text formating
 RED='\033[1;31m'
 GREEN='\033[1;32m'
