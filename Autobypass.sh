@@ -47,7 +47,7 @@ defineVolumePath() {
 	local volumeType=$2
 
 	if checkVolumeExistence "$defaultVolume"; then
-		echo "/System/Volumes/$defaultVolume"
+		echo "/Volumes/$defaultVolume"
 	else
 		local volumeName
 		volumeName="$(getVolumeName "$volumeType")"
@@ -83,11 +83,11 @@ select opt in "${options[@]}"; do
 		echo -e "${BLUE}Mounting volumes...${NC}"
 		# Mount System Volume
 		systemVolumePath=$(defineVolumePath "$DEFAULT_SYSTEM_VOLUME" "System")
-		mountVolume "$systemVolumePath"
+		mountVolume "/Volumes/Macintosh HD"
 
 		# Mount Data Volume
 		dataVolumePath=$(defineVolumePath "$DEFAULT_DATA_VOLUME" "Data")
-		mountVolume "$dataVolumePath"
+		mountVolume "/System/Volumes/Data"
 
 		echo -e "${GREEN}Volume preparation completed${NC}\n"
 
