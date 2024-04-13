@@ -51,7 +51,7 @@ defineVolumePath() {
 	else
 		local volumeName
 		volumeName="$(getVolumeName "$volumeType")"
-		echo "/Volumes/$volumeName"
+		echo "System/Volumes/$volumeName"
 	fi
 }
 
